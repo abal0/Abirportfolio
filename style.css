@@ -812,14 +812,14 @@ body.modal-open { overflow: hidden; }
 .projects-grid{
   margin-top: 32px;
   display:grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 22px;
   align-items: start;
 }
 
 /* Base card */
 .project-card{
-  border-radius: 18px;
+  border-radius: 12px;
   overflow:hidden;
   border: 1px solid rgba(255,255,255,.06);
   background: rgba(255,255,255,.03);
@@ -994,4 +994,5 @@ body.modal-open { overflow: hidden; }
 }
 .project-card.is-hidden {
   display: none;
+
 }
