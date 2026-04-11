@@ -867,20 +867,34 @@ body.modal-open { overflow: hidden; }
   .services-header h2 { font-size: 34px; }
   .service-card { flex: 0 0 92%; }
 
-  /* --- NEW FIX: Force 2 Columns on Mobile for Projects --- */
+  /* --- MIXED GRID FOR PROJECTS --- */
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr); /* Forces 2 columns side-by-side */
-    gap: 10px; /* Reduces gap so they fit better */
+    grid-template-columns: repeat(2, 1fr); /* Creates a 2-column grid base */
+    gap: 14px; /* Slightly adjusted gap for breathing room */
   }
 
-  /* Make text slightly smaller so it doesn't overflow the narrower cards */
+  /* 1. Video Cards: Span across both columns (Full width) */
+  .project-card--video {
+    grid-column: span 2; 
+  }
+
+  /* 2. Graphic Cards: Take up 1 column (Side-by-side) */
+  .project-card--design {
+    grid-column: span 1;
+  }
+
+  /* Adjust text scaling since videos are full width again */
   .project-meta { 
-    padding: 10px 12px 12px; 
+    padding: 14px 16px; 
   }
   .project-meta .tag { 
-    font-size: 9px; 
-    margin-bottom: 4px; 
+    font-size: 10px; 
+    margin-bottom: 6px; 
   }
+  .project-meta h3 { 
+    font-size: 15px; 
+  }
+}
   .project-meta h3 { 
     font-size: 13px; 
   }
