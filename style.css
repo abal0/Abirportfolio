@@ -855,7 +855,6 @@ body.modal-open { overflow: hidden; }
   .service-modal__panel { grid-template-columns: 1fr; margin: 24px auto; min-height: unset; }
   .service-modal__media { height: 260px; }
 }
-
 @media (max-width: 560px) {
   .page-title h1 { font-size: 38px; }
   .about__content h2 { font-size: 30px; }
@@ -893,9 +892,5 @@ body.modal-open { overflow: hidden; }
   }
   .project-meta h3 { 
     font-size: 15px; 
-  }
-}
-  .project-meta h3 { 
-    font-size: 13px; 
   }
 }
