@@ -17,7 +17,7 @@
 }
 
 * { box-sizing: border-box; }
-html, body { height: 100%; scroll-behavior: smooth; }
+html, body { height: 100vh; scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -62,7 +62,7 @@ img { max-width: 100%; display: block; }
   margin-inline: auto;
 }
 
-/* Header & Nav */
+/* --- HEADER & NAV --- */
 .header {
   position: sticky;
   top: 0;
@@ -70,6 +70,12 @@ img { max-width: 100%; display: block; }
   backdrop-filter: blur(10px);
   background: linear-gradient(180deg, rgba(5, 7, 20, .75), rgba(5, 7, 20, .35));
   border-bottom: 1px solid rgba(255, 255, 255, .06);
+  transition: transform 0.4s ease-in-out; /* Smooth slide animation */
+}
+
+/* Smart Hidden Header Class */
+.header--hidden {
+  transform: translateY(-100%);
 }
 
 .nav {
@@ -480,7 +486,7 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 18px 44px rgba(255, 122, 47, .18);
 }
 
-/* Grid layout with flex/grid fixes to prevent empty spaces */
+/* Grid layout with flex/grid fixes */
 .projects-grid {
   margin-top: 32px;
   display: grid;
@@ -505,7 +511,7 @@ img { max-width: 100%; display: block; }
   border-color: rgba(255, 122, 47, 0.4);
 }
 
-/* Hide filtered items strictly so they don't take up space */
+/* Hide filtered items strictly */
 .project-card.is-hidden { display: none !important; }
 
 /* Video Wrappers */
@@ -775,7 +781,7 @@ body.modal-open { overflow: hidden; }
 
 /* Footer Section */
 .footer {
-  background: #050817; /* Solid dark background to fix visibility */
+  background: #050817; 
   padding: 70px 20px 20px;
   color: #eaf0ff;
   border-top: 1px solid rgba(255, 255, 255, .06);
@@ -855,6 +861,7 @@ body.modal-open { overflow: hidden; }
   .service-modal__panel { grid-template-columns: 1fr; margin: 24px auto; min-height: unset; }
   .service-modal__media { height: 260px; }
 }
+
 @media (max-width: 560px) {
   .page-title h1 { font-size: 38px; }
   .about__content h2 { font-size: 30px; }
@@ -866,23 +873,20 @@ body.modal-open { overflow: hidden; }
   .services-header h2 { font-size: 34px; }
   .service-card { flex: 0 0 92%; }
 
-  /* --- MIXED GRID FOR PROJECTS --- */
+  /* --- MIXED GRID FOR PROJECTS (Mobile) --- */
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr); /* Creates a 2-column grid base */
-    gap: 14px; /* Slightly adjusted gap for breathing room */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 14px; 
   }
 
-  /* 1. Video Cards: Span across both columns (Full width) */
   .project-card--video {
     grid-column: span 2; 
   }
 
-  /* 2. Graphic Cards: Take up 1 column (Side-by-side) */
   .project-card--design {
     grid-column: span 1;
   }
 
-  /* Adjust text scaling since videos are full width again */
   .project-meta { 
     padding: 14px 16px; 
   }
