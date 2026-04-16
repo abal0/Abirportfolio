@@ -897,4 +897,60 @@ body.modal-open { overflow: hidden; }
   .project-meta h3 { 
     font-size: 15px; 
   }
+}@media (max-width: 560px) {
+  .page-title h1 { font-size: 38px; }
+  .about__content h2 { font-size: 30px; }
+  .portrait { width: 270px; }
+  .blob--a { left: 0; }
+  .blob--c { right: 40px; }
+  .info-grid { grid-template-columns: 1fr; gap: 14px; }
+  .projects-header h2 { font-size: 34px; }
+  .services-header h2 { font-size: 34px; }
+  .service-card { flex: 0 0 92%; }
+
+  /* --- FORCE 2 COLUMNS FOR SKILLS (Mobile) --- */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr); /* Creates 2 columns */
+    gap: 12px; /* Tighter gap for mobile */
+  }
+  
+  /* Scale down the cards so they fit nicely side-by-side */
+  .skill-card {
+    padding: 20px 14px; 
+  }
+  .skill-icon {
+    width: 44px; 
+    height: 44px; 
+    font-size: 20px; 
+    margin-bottom: 12px;
+  }
+  .skill-card h3 {
+    font-size: 12px; 
+    margin-bottom: 12px;
+  }
+
+  /* --- MIXED GRID FOR PROJECTS (Mobile) --- */
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 14px; 
+  }
+
+  .project-card--video {
+    grid-column: span 2; 
+  }
+
+  .project-card--design {
+    grid-column: span 1;
+  }
+
+  .project-meta { 
+    padding: 14px 16px; 
+  }
+  .project-meta .tag { 
+    font-size: 10px; 
+    margin-bottom: 6px; 
+  }
+  .project-meta h3 { 
+    font-size: 15px; 
+  }
 }
