@@ -191,4 +191,28 @@ document.addEventListener("DOMContentLoaded", () => {
     footerYearElement.innerHTML = `© ${currentYear} Abirhasan. All Rights Reserved.`;
   }
 
+  /* =========================================================
+     9. SMART HIDDEN HEADER (Works across the entire page)
+  ========================================================= */
+  const header = document.querySelector(".header");
+  let lastScrollY = window.scrollY;
+
+  if (header) {
+    window.addEventListener("scroll", () => {
+      const currentScrollY = window.scrollY;
+      
+      // If scrolling down AND past the first 100px of the site
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        header.classList.add("header--hidden");
+      } 
+      // If scrolling up
+      else {
+        header.classList.remove("header--hidden");
+      }
+      
+      // Update last scroll position (prevents mobile "bounce" bugs)
+      lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY; 
+    }, { passive: true }); // "passive: true" makes the scroll detection much faster
+  }
+
 });
